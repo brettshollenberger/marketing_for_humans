@@ -45,6 +45,10 @@ module.exports = {
           'url("public/hero.png"),linear-gradient(#E44B21,#E44B21)', // E25D10
         triangle:
           "repeating-conic-gradient(    from 0deg at 50% 100%,    #FFFDF1 45deg,    #FFFDF1 135deg,    #E44B21 135deg,    #E44B21 225deg  )",
+        highlight:
+          "url(https://s2.svgbox.net/pen-brushes.svg?ic=brush-9&color=fffDF1)",
+        "highlight-orange":
+          "url(https://s2.svgbox.net/pen-brushes.svg?ic=brush-9&color=E44B21)",
       },
       backgroundSize: { "hero-size": "contain,auto" },
       backgroundColor: {
@@ -61,6 +65,7 @@ module.exports = {
       borderColor: {
         default: "var(--color-border)",
         darksteel: "#E2E8F0",
+        champagnepink: "#E3CDBA",
       },
     },
   },
