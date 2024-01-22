@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 import astronautImage from "~/assets/astronaut.png";
+import Waitlist from "~/components/waitlist.astro";
 
 const widths = [450, 800];
 const sizes = "(min-width: 640px) 42vw, 67vw";
@@ -41,9 +42,12 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
           <span class="font-bold"> human</span> approach to<br />
           marketing that makes you money.
         </p>
-        <button
-          class="my-2 rounded-full bg-darksteel px-5 py-2 text-cream text-xs"
-          >Join the waitlist!</button
+        <a
+          id="waitlist-button"
+          class="my-2 rounded-full bg-darksteel px-5 py-2 text-cream text-xs hover:bg-cream hover:text-darksteel"
+          data-formkit-toggle="b8aa984805"
+          href="https://the-copy-whisperer.ck.page/b8aa984805"
+          >Join the waitlist!</a
         >
       </div>
     </h2>

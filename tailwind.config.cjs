@@ -25,6 +25,8 @@ module.exports = {
         darkgreen: "#0A4C3B",
         oldgold: "#BAB700",
         champagnepink: "#E3CDBA",
+        yellow: "#f39237",
+        darkgreen: "#042A2B",
       },
       textColor: {
         default: "var(--color-text)",
@@ -36,19 +38,23 @@ module.exports = {
         darkgreen: "#0A4C3B",
         oldgold: "#BAB700",
         champagnepink: "#E3CDBA",
+        yellow: "#f39237",
+        darkgreen: "#042A2B",
       },
       minHeight: {
         "75vh": "75vh",
       },
       backgroundImage: {
         "hero-pattern":
-          'url("public/hero.png"),linear-gradient(#E44B21,#E44B21)', // E25D10
+          'url("public/hero.png"),linear-gradient(#DB3132,#DB3132)', // E25D10
         triangle:
-          "repeating-conic-gradient(    from 0deg at 50% 100%,    #FFFDF1 45deg,    #FFFDF1 135deg,    #E44B21 135deg,    #E44B21 225deg  )",
+          "repeating-conic-gradient(    from 0deg at 50% 100%,    #FFFDF1 45deg,    #FFFDF1 135deg,    #DB3132 135deg,    #DB3132 225deg  )",
         highlight:
           "url(https://s2.svgbox.net/pen-brushes.svg?ic=brush-9&color=fffDF1)",
         "highlight-orange":
           "url(https://s2.svgbox.net/pen-brushes.svg?ic=brush-9&color=E44B21)",
+        "highlight-champagne":
+          "url(https://s2.svgbox.net/pen-brushes.svg?ic=brush-9&color=E3CDBA)",
       },
       backgroundSize: { "hero-size": "contain,auto" },
       backgroundColor: {
@@ -61,6 +67,8 @@ module.exports = {
         darkgreen: "#0A4C3B",
         oldgold: "#BAB700",
         champagnepink: "#E3CDBA",
+        yellow: "#f39237",
+        darkgreen: "#042A2B",
       },
       borderColor: {
         default: "var(--color-border)",
