@@ -45,8 +45,7 @@ module.exports = {
         "75vh": "75vh",
       },
       backgroundImage: {
-        "hero-pattern":
-          'url("public/hero.png"),linear-gradient(#DB3132,#DB3132)', // E25D10
+        "hero-pattern": 'url("dist/hero.png"),linear-gradient(#DB3132,#DB3132)', // E25D10
         triangle:
           "repeating-conic-gradient(    from 0deg at 50% 100%,    #FFFDF1 45deg,    #FFFDF1 135deg,    #DB3132 135deg,    #DB3132 225deg  )",
         highlight:
