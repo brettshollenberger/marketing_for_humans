@@ -11,6 +11,7 @@ import Splash from "~/components/splash.astro";
 import LandingPageSplash from "~/components/landing-page-splash.astro";
 import WhatYouLearn from "~/components/what-you-learn.astro";
 import AtAGlance from "~/components/at-a-glance.astro";
+import BragBox from "~/components/brag-box.astro";
 import "~/styles/index.css";
 
 const { generator, site } = Astro;
@@ -80,6 +81,7 @@ const description =
       </div>
     </div>
 
+    <BragBox />
     <WhoIsItFor />
     <WhatYouLearn />
     <AtAGlance />
