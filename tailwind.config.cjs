@@ -50,8 +50,12 @@ module.exports = {
       },
       backgroundImage: {
         "hero-pattern": 'url("/hero.png"),linear-gradient(#DB3132,#DB3132)', // E25D10
+        "hero-pattern-mobile":
+          'url("/hero_mobile.png"),linear-gradient(#DB3132,#DB3132)', // E25D10
         triangle:
           "repeating-conic-gradient(    from 0deg at 50% 100%,    #FFFDF1 45deg,    #FFFDF1 135deg,    #DB3132 135deg,    #DB3132 225deg  )",
+        triangle:
+          "repeating-conic-gradient(    from 0deg at 50% 100%,    #FFFDF1 45deg,    #FFFDF1 135deg,    transparent 135deg,    transparent 225deg  )",
         highlight:
           "url(https://s2.svgbox.net/pen-brushes.svg?ic=brush-9&color=fffDF1)",
         "highlight-orange":
@@ -74,6 +78,7 @@ module.exports = {
         champagnepink: "#E3CDBA",
         yellow: "#f39237",
         darkgreen: "#042A2B",
+        hero: "#DB3132",
       },
       borderColor: {
         default: "var(--color-border)",

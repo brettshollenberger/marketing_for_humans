@@ -9,19 +9,28 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
 ---
 
 <section
-  class="relative flex flex-col justify-center bg-black pb-20 text-darksteel"
+  class="relative flex flex-col justify-center overflow-hidden bg-black pb-60 text-darksteel sm:pb-20"
 >
-  <div class="min-h-full">
+  <div class="min-h-full overflow-hidden">
     <div
       id="splash-bg-fallback"
-      class="bg-hero-repeat absolute inset-0 bg-hero-pattern bg-hero-size"
+      class="bg-hero-repeat invisible absolute inset-0 bg-hero-pattern bg-hero-size md:visible"
       style="background-repeat: no-repeat,repeat; background-position: 65%;"
     >
     </div>
+    <div class="bg-hero visible absolute inset-0 md:invisible"></div>
+    <div
+      id="splash-bg-mobile"
+      class="bg-hero bg-hero-pattern-mobile visible absolute inset-0 bg-hero-size md:invisible"
+      style="background-repeat: no-repeat,repeat; background-position: center 70%; height: 150%;"
+    >
+    </div>
   </div>
-  <div class="relative grid h-full place-items-center py-20 sm:grid-cols-2">
+  <div
+    class="relative grid h-full place-items-center pt-0 sm:grid-cols-2 sm:py-20"
+  >
     <h2
-      class="mt-40 flex flex-col items-center gap-2 self-end sm:gap-4 sm:self-auto sm:justify-self-end"
+      class="mt-24 flex flex-col items-center gap-2 self-end sm:mb-0 sm:mt-40 sm:gap-4 sm:self-auto sm:justify-self-end"
     >
       <div>
         <span
@@ -51,6 +60,11 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
         >
       </div>
     </h2>
+  </div>
+  <div
+    class="bg-size-100 absolute bottom-0 h-[100px] w-full bg-triangle bg-bottom bg-repeat-x"
+    style="background-size:45px;"
+  >
   </div>
 </section>
 
