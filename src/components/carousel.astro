@@ -1,0 +1,158 @@
+---
+import { Icon } from "astro-icon/components";
+const features = Astro.props.carouselItems;
+let slideCount = features.length;
+---
+
+<div
+  id="carouselExampleCaptions"
+  class="carousel relative"
+  data-te-carousel-init
+  data-te-ride="carousel"
+>
+  <!-- Carousel items -->
+  <div
+    class="carousel-inner relative w-full overflow-hidden after:clear-both after:block after:content-['']"
+    data-slide-count={features.length}
+  >
+    {
+      features.map(({ title, description, icon }, index) => (
+        <div
+          key={`carousel-item-${index}`}
+          data-te-carousel-item
+          {...(index === 0 && { "data-te-carousel-active": "" })}
+          class="carousel-item relative float-left w-full rounded-lg transition-transform duration-[600ms] ease-in-out"
+          style="backface-visibility: hidden"
+        >
+          <div class="flex min-h-80 flex-col items-center justify-center gap-4 rounded-lg border border-default bg-offset p-6">
+            <div class="size-16 rounded-full border-2 border-current p-3">
+              <Icon name={icon} class="size-full" />
+            </div>
+            <div>
+              <p class="text-center font-extrabold text-xl">{title}</p>
+              <p class="text-center text-offset text-sm">{description}</p>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+
+  <!-- Carousel controls -->
+  <!-- Previous button -->
+  <button
+    class="carousel-control-prev absolute bottom-0 left-0 top-0 z-20 flex items-center justify-center bg-none p-0 opacity-50 transition-opacity duration-150 ease-in-out hover:opacity-90 focus:outline-none"
+    type="button"
+    data-te-target="#carouselExampleCaptions"
+    data-te-slide="prev"
+  >
+    <span class="inline-block h-8 w-8">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="h-6 w-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M15.75 19.5L8.25 12l7.5-7.5"></path>
+      </svg>
+    </span>
+  </button>
+
+  <!-- Next button -->
+  <button
+    class="carousel-control-next absolute bottom-0 right-0 top-0 z-20 flex items-center justify-center bg-none p-0 opacity-50 transition-opacity duration-150 ease-in-out hover:opacity-90 focus:outline-none"
+    type="button"
+    data-te-target="#carouselExampleCaptions"
+    data-te-slide="next"
+  >
+    <span class="inline-block h-8 w-8">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="h-6 w-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
+      </svg>
+    </span>
+  </button>
+</div>
+<style>
+  .carousel {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .carousel-indicators {
+    bottom: 10px; /* Adjust as per your design */
+  }
+  .carousel-item {
+    display: none; /* Hide all items by default */
+  }
+  .carousel-item[data-te-carousel-active] {
+    display: block; /* Only show the active item */
+  }
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 50px; /* Control width */
+    height: 100%; /* Full height of the carousel */
+    cursor: pointer;
+  }
+  .carousel-control-prev:hover,
+  .carousel-control-next:hover {
+    opacity: 0.75;
+  }
+  .carousel-inner {
+    display: flex;
+    flex-wrap: nowrap; /* Ensure items are in a row */
+    transition: transform 0.6s ease; /* Smooth transition for the sliding effect */
+    overflow: hidden; /* Hide the overflow */
+  }
+
+  .carousel-item {
+    flex: 0 0 100%; /* Each item is 100% of the container width */
+    width: 100%; /* Ensure item width is 100% */
+    /* Remove any transition or opacity rules here */
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const carouselInner = document.querySelector(".carousel-inner");
+    const slides = carouselInner.querySelectorAll(".carousel-item");
+    let currentIndex = 0;
+
+    function updateCarousel() {
+      // Translate the container, not the individual items
+      const transformValue = `translateX(-${currentIndex}%)`;
+      carouselInner.style.transform = transformValue;
+    }
+
+    // Add event listeners for next and previous buttons
+    const prevButton = document.querySelector(".carousel-control-prev");
+    const nextButton = document.querySelector(".carousel-control-next");
+
+    prevButton.addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      updateCarousel();
+    });
+
+    nextButton.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      updateCarousel();
+    });
+
+    // Initialize the carousel to show the first item
+    updateCarousel();
+  });
+</script>

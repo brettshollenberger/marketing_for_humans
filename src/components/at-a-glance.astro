@@ -42,10 +42,10 @@ const features: Array<FeatureItem> = [
 ];
 ---
 
-<section class="bg-champagnepink py-12" id="at-a-glance">
+<section class="bg-champagnepink px-8 pt-8 sm:py-12" id="at-a-glance">
   <div class="flex flex-col items-center">
     <h2
-      class="bg-highlight-darkgreen p-3 px-6 font-larken font-extrabold text-champagnepink text-4xl"
+      class="bg-highlight-darkgreen py-4 text-center font-larken font-extrabold text-champagnepink text-4xl sm:px-8 sm:py-6 sm:text-left"
     >
       Marketing For Humans
     </h2>
@@ -53,7 +53,9 @@ const features: Array<FeatureItem> = [
       At A Glance...
     </h3>
     <div class="flex flex-col items-center text-darkgreen">
-      <div class="mt-6 grid max-w-6xl grid-cols-3 items-start gap-4">
+      <div
+        class="grid w-96 max-w-full grid-cols-1 items-start sm:mt-6 sm:max-w-6xl sm:grid-cols-3 sm:gap-4"
+      >
         <!-- Left Column -->
         <div class="left-col col-span-2">
           <div class="m-6 rounded-lg">
@@ -128,7 +130,7 @@ const features: Array<FeatureItem> = [
         </div>
 
         <div
-          class="right-col col-span-1 flex h-full items-center justify-center"
+          class="right-col col-span-1 flex hidden h-full items-center justify-center sm:block"
         >
           <img
             src="https://assets-global.website-files.com/5f2ae813361eff3ad9282b29/64946b438ebd741fb29ba6f2_Bschool%20Vertical%20Bundle-p-800.jpg"
