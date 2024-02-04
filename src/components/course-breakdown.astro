@@ -1,0 +1,256 @@
+---
+import { Icon } from "astro-icon/components";
+import ContentSection from "~/components/content-section.astro";
+import type { FeatureItem } from "~/types";
+---
+
+<section class="bg-darkgreen p-10">
+  <div class="flex flex-col items-center">
+    <h2
+      class="bg-highlight p-3 px-6 font-larken font-extrabold text-darksteel text-4xl"
+    >
+      Course Breakdown
+    </h2>
+    <div
+      class="mt-6 grid max-w-7xl grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3"
+    >
+      <!-- Branding -->
+      <div
+        class="relative flex flex-col items-start justify-start gap-4 rounded-lg border border-default bg-offset p-6"
+      >
+        <div class="p-3">
+          <img src="/branding.png" />
+        </div>
+        <div>
+          <p class="text-center font-extrabold text-xl">Phase One: Branding</p>
+          <p class="text-md font-md mb-5 text-center">A Reason To Choose You</p>
+          <p class="text-center text-offset text-sm">
+            As a solo-prenuer, it's easy to end up following the crowd. Easy to
+            wake up one day and realize you’ve been speaking in the proverbial
+            "yoga instructor voice" just because that’s what all the other yoga
+            instructors were doing...
+            <br />
+            <br />
+            <div
+              class="!visible hidden"
+              id="storytelling-collapse"
+              data-te-collapse-item
+            >
+              <p class="text-center text-offset text-sm">
+                The secret to standing out in a crowded industry, to creating
+                genuine connection with customers, and to finding the success
+                you’ve been dreaming of — it’s in being yourself.
+              </p>
+              <br />
+
+              <p class="text-center text-offset text-sm">
+                This course empowers you to challenge the status quo by
+                embracing the qualities that make you, you. This course isn't
+                just about standing out; it's about creating connection and
+                trust with your ideal customers, through your unique
+                personality, values, and point of view.
+              </p>
+              <br />
+              <p class="text-center text-offset text-sm">
+                It will help you gain the confidence and clarity you need to
+                define where your brand is headed for the long term. Become an
+                entrepreneur who doesn't just follow trends, but creates new
+                ones.
+              </p>
+              <br />
+            </div>
+          </p>
+          <div class="absolute bottom-0 right-0 p-6">
+            <a
+              data-te-collapse-init
+              data-te-ripple-init
+              data-te-ripple-color="light"
+              href="#storytelling-collapse"
+              role="button"
+              aria-expanded="false"
+              aria-controls="storytelling-collapse"
+              class="rotate-button1 text-right"
+            >
+              <Icon class="size-12" name="expand" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Storytelling -->
+      <div
+        class="relative flex flex-col items-start justify-start gap-4 rounded-lg border border-default bg-offset p-6"
+      >
+        <div class="p-3">
+          <img src="/campfire2.png" />
+        </div>
+        <div>
+          <p class="text-center font-extrabold text-xl">
+            Phase Two: Storytelling
+          </p>
+          <p class="text-md font-md mb-5 text-center">Connect And Convert</p>
+          <p class="text-center text-offset text-sm">
+            Learning to tell a great story is the number one skill a solopreneur
+            can learn to make sales feel easy, authentic, and consistently
+            effective. Marketing is all about building connections and humans
+            build connections by telling stories...
+            <br />
+            <br />
+            <div
+              class="!visible hidden"
+              id="storytelling-collapse"
+              data-te-collapse-item
+            >
+              <p class="text-center text-offset text-sm">
+                Whether it's your audience, a potential customer, or your best
+                friend, we tell stories to understand, to build trust, and to
+                connect with one another. When we share ourselves through story,
+                we create familiarity, trust, and fun where it didn’t exist
+                before.
+              </p>
+              <br />
+
+              <p class="text-center text-offset text-sm">
+                Whether it's your website, about page, weekly emails, successful
+                case studies, webinar scripts, or stage time — telling a good
+                story is THE best marketing strategy you can use in 2024.
+              </p>
+              <br />
+              <p class="text-center text-offset text-sm">
+                This course teaches you how to use storytelling as a dynamic
+                tool to forge deep connections with your audience. It's not just
+                about telling a story; it's about telling it in a way that
+                resonates, shifts beliefs, and inspires action.
+              </p>
+              <br />
+              <p class="text-center text-offset text-sm">
+                Learn to weave your experiences, values, and mission into
+                stories that not only define your brand but also create a
+                powerful emotional bond with your customers. Storytelling in
+                business isn't just a skill; it's an art and a science that once
+                learned, can make you money.
+              </p>
+            </div>
+          </p>
+          <div class="absolute bottom-0 right-0 p-6">
+            <a
+              data-te-collapse-init
+              data-te-ripple-init
+              data-te-ripple-color="light"
+              href="#storytelling-collapse"
+              role="button"
+              aria-expanded="false"
+              aria-controls="storytelling-collapse"
+              class="rotate-button2 text-right"
+            >
+              <Icon class="size-12" name="expand" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Humor -->
+      <div
+        class="relative flex flex-col items-start justify-start gap-4 rounded-lg border border-default bg-offset p-6"
+      >
+        <div class="p-3">
+          <img src="/laughing.png" />
+        </div>
+        <div class="h-full">
+          <p class="text-center font-extrabold text-xl">Phase Three: Humor</p>
+          <p class="text-md font-md mb-5 mb-5 text-center">
+            Disarm 'Em & Charm 'Em
+          </p>
+          <p class="text-center text-offset text-sm">
+            The average person sees 10,000 messages a day, if you're not making
+            people laugh, smile, or feel less alone — I can guarantee your
+            content won’t be shared with friends, it won’t be read, and it most
+            certainly won’t be remembered...
+            <br />
+            <br />
+            <div
+              class="!visible hidden"
+              id="storytelling-collapse"
+              data-te-collapse-item
+            >
+              <p class="text-center text-offset text-sm">
+                The secret to avoiding the archive, steering clear of the
+                thumbs-down button, and outmaneuvering the never ending scroll…
+                it's using humor in your marketing.
+              </p>
+              <br />
+              <p class="text-center text-offset text-sm">
+                Humor isn't just about getting laughs; it's a strategic tool
+                that humanizes your brand, gets customers to put their guard
+                down, and helps you stand out and be remembered.
+              </p>
+              <br />
+              <p class="text-center text-offset text-sm">
+                This course will guide you through the process of crafting jokes
+                and comedic content that aligns with your personality, your POV,
+                and your brand. Humor will help you to not just sell, but to
+                connect, entertain, and engage with your audience on a more
+                personal level.
+              </p>
+              <br />
+              <p class="text-center text-offset text-sm">
+                Anytime we’re selling — humor helps (with the exception of
+                funeral homes… but sometimes even then…) humor can ease the
+                tension of a transaction and illustrate your genuine intent to
+                not just sell, but help.
+              </p>
+              <br />
+
+              <p class="pb-10 text-center text-offset text-sm">
+                Whether it's your website, about page, weekly emails, successful
+                case studies, webinar scripts, or stage time — telling a good
+                story is THE best marketing strategy you can use in 2024.
+              </p>
+            </div>
+          </p>
+          <div class="absolute bottom-0 right-0 p-6">
+            <a
+              data-te-collapse-init
+              data-te-ripple-init
+              data-te-ripple-color="light"
+              href="#storytelling-collapse"
+              role="button"
+              aria-expanded="false"
+              aria-controls="storytelling-collapse"
+              class="rotate-button3 text-right"
+            >
+              <Icon class="size-12" name="expand" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>;
+
+<style>
+  .rotate-180 {
+    transform: rotate(180deg);
+    transition: transform 0.2s ease-in-out;
+  }
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const rotateButton1 = document.querySelector(".rotate-button1");
+    const rotateButton2 = document.querySelector(".rotate-button2");
+    const rotateButton3 = document.querySelector(".rotate-button3");
+
+    function rotateButton() {
+      // Toggle the rotate-180 class on click
+      this.classList.toggle("rotate-180");
+
+      // Optional: Toggle aria-expanded attribute to reflect state
+      const isExpanded = this.getAttribute("aria-expanded") === "true";
+      this.setAttribute("aria-expanded", !isExpanded);
+    }
+
+    rotateButton1.addEventListener("click", rotateButton);
+    rotateButton2.addEventListener("click", rotateButton);
+    rotateButton3.addEventListener("click", rotateButton);
+  });
+</script>

@@ -1,7 +1,11 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
-  content: ["./src/**/*.{astro,html,js,jsx,svelte,ts,tsx,vue}"],
+  content: [
+    "./src/**/*.{astro,html,js,jsx,svelte,ts,tsx,vue}",
+    "./src/**/*.{html,js}",
+    "./node_modules/tw-elements/dist/js/**/*.js",
+  ],
   theme: {
     extend: {
       fontFamily: {
@@ -54,6 +58,8 @@ module.exports = {
           "url(https://s2.svgbox.net/pen-brushes.svg?ic=brush-9&color=E44B21)",
         "highlight-champagne":
           "url(https://s2.svgbox.net/pen-brushes.svg?ic=brush-9&color=E3CDBA)",
+        "highlight-darkgreen":
+          "url(https://s2.svgbox.net/pen-brushes.svg?ic=brush-9&color=042A2B)",
       },
       backgroundSize: { "hero-size": "contain,auto" },
       backgroundColor: {
@@ -79,7 +85,11 @@ module.exports = {
   corePlugins: {
     fontSize: false,
   },
-  plugins: [require("tailwindcss-fluid-type"), require("tailwindcss-patterns")],
+  plugins: [
+    require("tailwindcss-fluid-type"),
+    require("tailwindcss-patterns"),
+    require("tw-elements/dist/plugin"),
+  ],
 };
 
 // darksteel: "#392353",

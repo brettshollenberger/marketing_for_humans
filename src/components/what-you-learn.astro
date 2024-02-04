@@ -1,44 +1,47 @@
 ---
-import { Icon } from "astro-icon/components";
-import ContentSection from "~/components/content-section.astro";
-import type { FeatureItem } from "~/types";
-
-const features: Array<FeatureItem> = [
+let features = [
   {
     title: "Say goodbye to pushy sales tactics",
     description:
       "And say hello to a style of selling that's proven, authentic, and genuinely helpful. You'll learn how to tune into your customers' needs way before they buy, so that the sale is simply a natural conclusion to the amazing help you've already provided.",
     icon: "wave",
+    number: 1,
   },
   {
     title: "Be unforgettable in a busy world",
     description:
       "Stand out by developing a brand that reflects the best, most authentic version of you — one that showcases your values and connects with your customers' dream-self. It's like wearing your favorite outfit, but for business.",
     icon: "starstruck",
-  },
-  {
-    title: "Get your customers to say “I’m in!”",
-    description:
-      "What's stopping your customers from buying? You'll learn how to address those roadblocks head-on through the power of storytelling. Stories have the power to connect, inspire, and motivate, helping your customers go from “I’m not sure” to “I’m in!”",
-    icon: "hand-raise",
-  },
-  {
-    title: "Disarm them with humor",
-    description:
-      "Ever noticed how a good laugh can melt away tension? How the most shareable Instagrams are the funniest?  It's not just about making your audience laugh — it's about making them comfortable, receptive, ready to listen. Learn how to craft messages that are not only memorable, but irresistable.",
-    icon: "laugh",
+    number: 2,
   },
   {
     title: "Turn skepticism into sales",
     description:
-      "Clearly understand what moves and motivates your customers and learn the secret to creating a marketing strategy around that transforms their doubt into confidence and makes them eager to buy.",
-    icon: "moneybag",
+      "What's stopping your customers from buying? You'll learn how to address those roadblocks head-on through the power of storytelling. Stories have the power to connect, inspire, and motivate, helping your customers go from “I’m not sure” to “I’m in!”",
+    icon: "hand-raise",
+    number: 3,
   },
   {
-    title: "Master your content game",
+    title: "Disarm and charm 'em with humor",
     description:
-      "Desperate for content ideas?  Discover how to craft a strategy that makes you the go-to source in your niche — not just any brand, but the one who's truly walked in your customers' shoes. This is your key to creating content that resonates and attracts your ideal audience.",
+      "Humor isn't just about getting laughs. It's a strategic tool that humanizes your brand, gets customers to put their guard down, and helps you stand out and be remembered.",
+    icon: "laugh",
+    number: 4,
+  },
+  {
+    title: "Attract your tribe",
+    description:
+      "Learn the secrets to creating a business that resonates with and attracts your ideal customers. Learn to magnetize the clients who want to pick up what you're puttin' down.",
     icon: "trophy",
+    number: 5,
+  },
+  {
+    title: "Master the art of storytelling",
+    description:
+      "Modern marketing is all about connection, and humans build connection by telling stories. Whether it's your website, about page, weekly emails, successful case studies, webinar scripts, or stage time — telling a good story is THE best marketing strategy you can use in 2024.",
+
+    icon: "trophy",
+    number: 6,
   },
 ];
 ---
@@ -46,17 +49,15 @@ const features: Array<FeatureItem> = [
 <section class="py-12">
   <div class="flex flex-col items-center">
     <h2 class="font-larken font-extrabold text-darksteel text-4xl">
-      Marketing For Humans Will Help You...
+      This course will help you...
     </h2>
     <div class="mt-6 grid max-w-6xl grid-cols-1 gap-4 md:grid-cols-2">
       {
-        features.map(({ title, description, icon }) => (
+        features.map(({ title, description, icon, number }) => (
           <div class="items-left flex flex-col justify-center gap-4 rounded-lg border border-champagnepink bg-white p-6">
-            <div class="size-16 rounded-full p-3">
-              <Icon name={icon} class="size-full" />
-            </div>
+            <h3 class="font-thin italic text-3xl">0{number}.</h3>
             <div>
-              <p class="text-left font-extrabold text-xl">{title}</p>
+              <p class="pb-3 text-left font-extrabold text-xl">{title}</p>
               <p class="text-left text-offset text-sm">{description}</p>
             </div>
           </div>

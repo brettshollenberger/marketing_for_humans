@@ -8,6 +8,7 @@ export interface FeatureItem {
   description: string;
   icon: string;
   title: string;
+  number: number;
 }
 
 export interface FooterLink {

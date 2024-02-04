@@ -12,6 +12,9 @@ import LandingPageSplash from "~/components/landing-page-splash.astro";
 import WhatYouLearn from "~/components/what-you-learn.astro";
 import AtAGlance from "~/components/at-a-glance.astro";
 import BragBox from "~/components/brag-box.astro";
+import QuoteBar from "~/components/quote-bar.astro";
+import CourseBreakdown from "~/components/course-breakdown.astro";
+import Biography from "~/components/biography.astro";
 import "~/styles/index.css";
 
 const { generator, site } = Astro;
@@ -20,7 +23,6 @@ const description =
   "Build fast websites, faster. Astro is a new kind of site builder for the modern web. Lightning-fast performance meets powerful developer experience.";
 ---
 
-<!doctype html>
 <html lang="en" class="h-full motion-safe:scroll-smooth" data-theme="dark">
   <head>
     <meta charset="utf-8" />
@@ -41,6 +43,7 @@ const description =
 
     <link rel="stylesheet" href="https://use.typekit.net/wih8loc.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <!-- initialize theme -->
     <script is:inline>
       const themeSaved = localStorage.getItem("theme");
@@ -81,12 +84,16 @@ const description =
       </div>
     </div>
 
-    <BragBox />
+    <QuoteBar />
     <WhoIsItFor />
-    <WhatYouLearn />
+    <BragBox />
     <AtAGlance />
-    <Compatibility />
-    <Showcase />
+    <WhatYouLearn />
+    <CourseBreakdown />
+    <Biography />
+    <script
+      src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/tw-elements.umd.min.js"
+    ></script>
   </body>
   <script
     is:inline
