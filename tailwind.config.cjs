@@ -8,6 +8,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        xs: "480px", // Adding an extra small breakpoint
+        "3xl": "1600px", // Adding a larger breakpoint
+      },
       fontFamily: {
         sans: ["Inter Variable", ...defaultTheme.fontFamily.sans],
         larken: "larken",
@@ -21,7 +25,7 @@ module.exports = {
       },
       colors: {
         primary: "var(--color-primary)",
-        secondary: "var(--color-secondary)",
+        secondary: "#E44B21",
         steel: "#656A9A",
         darksteel: "#33001e",
         orange: "#E44B21",
@@ -65,7 +69,18 @@ module.exports = {
         "highlight-darkgreen":
           "url(https://s2.svgbox.net/pen-brushes.svg?ic=brush-9&color=042A2B)",
       },
-      backgroundSize: { "hero-size": "contain,auto" },
+      backgroundSize: {
+        "hero-size": "contain,auto",
+        90: "90% auto",
+        80: "80% auto",
+        70: "70% auto",
+        60: "60% auto",
+        50: "50% auto",
+        40: "40% auto",
+        30: "30% auto",
+        20: "20% auto",
+        10: "10% auto",
+      },
       backgroundColor: {
         default: "#FFFDF1",
         offset: "var(--color-background-offset)",

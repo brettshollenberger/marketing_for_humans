@@ -3,12 +3,18 @@ import { Icon } from "astro-icon/components";
 import ThemeSwitcher from "~/components/theme-switcher.astro";
 import type { NavItem } from "~/types";
 
-const navItems: Array<NavItem> = [
+const defaultNavItems: Array<NavItem> = [
   { title: "Overview", url: "#at-a-glance" },
   { title: "Who It's For", url: "#who-is-it-for" },
   { title: "What You Learn", url: "#course-breakdown" },
   { title: "Instructor", url: "#instructor" },
 ];
+
+interface HeaderProps {
+  navItems?: Array<NavItem>;
+}
+
+const { navItems = defaultNavItems }: HeaderProps = Astro.props;
 ---
 
 <header

@@ -1,0 +1,110 @@
+---
+import "@fontsource-variable/inter";
+import Header from "~/components/header.astro";
+import Splash from "~/components/landing-page/splash.astro";
+import "~/styles/index.css";
+import type { NavItem } from "~/types";
+
+const { generator, site } = Astro;
+const image = new URL("social.jpg", site);
+const description =
+  "Build fast websites, faster. Astro is a new kind of site builder for the modern web. Lightning-fast performance meets powerful developer experience.";
+
+const defaultNavItems: Array<NavItem> = [
+  { title: "Marketing For Humans", url: "/" }
+];
+
+interface LandingPageProps {
+  navItems?: Array<NavItem>;
+  backgroundImg?: string;
+}
+
+const { 
+  navItems = defaultNavItems,
+  backgroundImg
+}: LandingPageProps = Astro.props;
+---
+
+<html lang="en" class="h-full motion-safe:scroll-smooth" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta name="generator" content={generator} />
+
+    <title>Astro Landing Page</title>
+    <meta name="description" content={description} />
+
+    <!-- social media -->
+    <meta property="og:title" content="Astro" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:url" content={site} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="stylesheet" href="https://use.typekit.net/wih8loc.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- initialize theme -->
+    <script is:inline>
+      const themeSaved = localStorage.getItem("theme");
+
+      if (themeSaved) {
+        document.documentElement.dataset.theme = themeSaved;
+      } else {
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)",
+        ).matches;
+        document.documentElement.dataset.theme = prefersDark ? "dark" : "light";
+      }
+
+      window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .addEventListener("change", (event) => {
+          if (!localStorage.getItem("theme")) {
+            document.documentElement.dataset.theme = event.matches
+              ? "dark"
+              : "light";
+          }
+        });
+    </script>
+  </head>
+  <Header navItems={navItems} />
+  <body
+    class="h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
+  >
+    <Splash backgroundImg={backgroundImg}>
+      <slot name="title" slot="title"></slot>
+      <slot name="description" slot="description"></slot>
+    </Splash>
+
+    <section
+      class="relative flex flex-col justify-center overflow-hidden bg-cream pb-60 text-darksteel sm:pb-20"
+    >
+      <div class="relative grid place-items-center pt-20 px-16 sm:grid-cols-8 gap-4">
+        <!-- buffer -->
+        <div class="col-span-1 3xl:col-span-2"></div>
+        <!-- buffer -->
+        <div class="col-span-6 columns-2">
+          <slot name="content"></slot>
+        </div>
+      </div>
+      <div
+        class="bg-size-100 absolute bottom-0 h-[100px] w-full bg-triangle bg-bottom bg-repeat-x"
+        style="background-size:45px;"
+      >
+      </div>
+    </section>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/tw-elements.umd.min.js"
+    ></script>
+  </body>
+  <script
+    is:inline
+    client:load
+    async
+    data-uid="b8aa984805"
+    src="https://the-copy-whisperer.ck.page/b8aa984805/index.js"></script>
+</html>

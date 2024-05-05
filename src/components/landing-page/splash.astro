@@ -1,0 +1,404 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import astronautImage from "~/assets/astronaut.png";
+import Waitlist from "~/components/waitlist.astro";
+
+const widths = [450, 800];
+const sizes = "(min-width: 640px) 42vw, 67vw";
+
+interface SplashProps {
+  backgroundImg?: string;
+  clippedBackground: boolean;
+}
+
+const defaultBackgroundImg = "dummy.png";
+
+const { 
+  backgroundImg = defaultBackgroundImg
+}: SplashProps = Astro.props;
+console.log(backgroundImg);
+---
+
+<section
+  class="relative flex flex-col justify-center overflow-hidden bg-black pb-60 text-darksteel sm:pb-20"
+>
+  <div class="overflow-hidden">
+    <div
+      id="splash-bg-fallback"
+      class="bg-hero-repeat invisible absolute inset-0 bg-[125%] bg-50 3xl:bg-40 3xl:bg-[110%] overflow-hidden md:visible"
+      style={`background-repeat: no-repeat,repeat; background-image: url('/landing_page/lead_magnets/${backgroundImg}'), linear-gradient(#FCEBD7,#FCEBD7);`}
+    >
+    </div>
+    <!-- <div
+      id="splash-bg-mobile"
+      class="visible absolute inset-0 bg-hero bg-hero-pattern-mobile bg-hero-size md:invisible"
+      style="background-repeat: no-repeat,repeat; background-position: center 70%; height: 150%;"
+    >
+    </div> -->
+  </div>
+  <div class="relative grid place-items-center pt-0 px-16 sm:grid-cols-8 sm:py-20">
+    <!-- buffer -->
+    <div class="col-span-1 3xl:col-span-2"></div>
+    <!-- buffer -->
+    <h2
+      class="mt-24 flex flex-col items-center 3xl:col-span-2 sm:col-span-3 gap-2 sm:mb-0 sm:mt-40 sm:gap-4 sm:self-auto sm:justify-self-end"
+    >
+      <div>
+        <span
+          class="text-left font-extrabold tracking-tighter text-orange text-6xl"
+        >
+        <slot name="title">My Great Title</slot>
+        </span>
+        <slot name="description">A little description goes here.</slot>
+        <div class="mt-4 w-5/6">
+          <script
+            async
+            data-uid="8a5623c1dd"
+            src="https://the-copy-whisperer.ck.page/8a5623c1dd/index.js"
+          ></script>
+        </div>
+      </div>
+    </h2>
+  </div>
+  <div
+    class="bg-size-100 absolute bottom-0 h-[100px] w-full bg-triangle bg-bottom bg-repeat-x"
+    style="background-size:45px;"
+  >
+  </div>
+</section>
+
+<script>
+  jQuery(document).ready(function ($) {
+    var animationDelay = 2500,
+      barAnimationDelay = 3800,
+      barWaiting = barAnimationDelay - 3000,
+      lettersDelay = 50,
+      typeLettersDelay = 150,
+      selectionDuration = 500,
+      typeAnimationDelay = selectionDuration + 800,
+      revealDuration = 600,
+      revealAnimationDelay = 1500;
+
+    initHeadline();
+
+    function initHeadline() {
+      singleLetters($(".text-rotate.letters").find("b"));
+      animateHeadline($(".text-rotate"));
+    }
+
+    function singleLetters($words) {
+      $words.each(function () {
+        var word = $(this),
+          letters = word.text().split(""),
+          selected = word.hasClass("is-visible");
+        for (i in letters) {
+          if (word.parents(".rotate-2").length > 0)
+            letters[i] = "<em>" + letters[i] + "</em>";
+          letters[i] = selected
+            ? '<i class="in">' + letters[i] + "</i>"
+            : "<i>" + letters[i] + "</i>";
+        }
+        var newLetters = letters.join("");
+        word.html(newLetters).css("opacity", 1);
+      });
+    }
+
+    function animateHeadline($headlines) {
+      var duration = animationDelay;
+      $headlines.each(function () {
+        var headline = $(this);
+
+        if (headline.hasClass("loading-bar")) {
+          duration = barAnimationDelay;
+          setTimeout(function () {
+            headline.find(".sp-words-wrapper").addClass("is-loading");
+          }, barWaiting);
+        } else if (headline.hasClass("clip")) {
+          var spanWrapper = headline.find(".sp-words-wrapper"),
+            newWidth = spanWrapper.width() + 10;
+          spanWrapper.css("width", newWidth);
+        } else if (!headline.hasClass("type")) {
+          var words = headline.find(".sp-words-wrapper b"),
+            width = 0;
+          words.each(function () {
+            var wordWidth = $(this).width();
+            if (wordWidth > width) width = wordWidth;
+          });
+          headline.find(".sp-words-wrapper").css("width", width);
+        }
+
+        setTimeout(function () {
+          hideWord(headline.find(".is-visible").eq(0));
+        }, duration);
+      });
+    }
+
+    function hideWord($word) {
+      var nextWord = takeNext($word);
+
+      if ($word.parents(".text-rotate").hasClass("type")) {
+        var parentSpan = $word.parent(".sp-words-wrapper");
+        parentSpan.addClass("selected").removeClass("waiting");
+        setTimeout(function () {
+          parentSpan.removeClass("selected");
+          $word
+            .removeClass("is-visible")
+            .addClass("is-hidden")
+            .children("i")
+            .removeClass("in")
+            .addClass("out");
+        }, selectionDuration);
+        setTimeout(function () {
+          showWord(nextWord, typeLettersDelay);
+        }, typeAnimationDelay);
+      } else if ($word.parents(".text-rotate").hasClass("letters")) {
+        var bool =
+          $word.children("i").length >= nextWord.children("i").length
+            ? true
+            : false;
+        hideLetter($word.find("i").eq(0), $word, bool, lettersDelay);
+        showLetter(nextWord.find("i").eq(0), nextWord, bool, lettersDelay);
+      } else if ($word.parents(".text-rotate").hasClass("clip")) {
+        $word
+          .parents(".sp-words-wrapper")
+          .animate({ width: "2px" }, revealDuration, function () {
+            switchWord($word, nextWord);
+            showWord(nextWord);
+          });
+      } else if ($word.parents(".text-rotate").hasClass("loading-bar")) {
+        $word.parents(".sp-words-wrapper").removeClass("is-loading");
+        switchWord($word, nextWord);
+        setTimeout(function () {
+          hideWord(nextWord);
+        }, barAnimationDelay);
+        setTimeout(function () {
+          $word.parents(".sp-words-wrapper").addClass("is-loading");
+        }, barWaiting);
+      } else {
+        switchWord($word, nextWord);
+        setTimeout(function () {
+          hideWord(nextWord);
+        }, animationDelay);
+      }
+    }
+
+    function hideLetter($letter, $word, $bool, $duration) {
+      $letter.removeClass("in").addClass("out");
+
+      if (!$letter.is(":last-child")) {
+        setTimeout(function () {
+          hideLetter($letter.next(), $word, $bool, $duration);
+        }, $duration);
+      } else if ($bool) {
+        setTimeout(function () {
+          hideWord(takeNext($word));
+        }, animationDelay);
+      }
+
+      if (
+        $letter.is(":last-child") &&
+        $("html").hasClass("no-csstransitions")
+      ) {
+        var nextWord = takeNext($word);
+        switchWord($word, nextWord);
+      }
+    }
+
+    function showLetter($letter, $word, $bool, $duration) {
+      $letter.addClass("in").removeClass("out");
+
+      if (!$letter.is(":last-child")) {
+        setTimeout(function () {
+          showLetter($letter.next(), $word, $bool, $duration);
+        }, $duration);
+      } else {
+        if ($word.parents(".text-rotate").hasClass("type")) {
+          setTimeout(function () {
+            $word.parents(".sp-words-wrapper").addClass("waiting");
+          }, 200);
+        }
+        if (!$bool) {
+          setTimeout(function () {
+            hideWord($word);
+          }, animationDelay);
+        }
+      }
+    }
+
+    function takeNext($word) {
+      return !$word.is(":last-child")
+        ? $word.next()
+        : $word.parent().children().eq(0);
+    }
+
+    function takePrev($word) {
+      return !$word.is(":first-child")
+        ? $word.prev()
+        : $word.parent().children().last();
+    }
+
+    function switchWord($oldWord, $newWord) {
+      $oldWord.removeClass("is-visible").addClass("is-hidden");
+      $newWord.removeClass("is-hidden").addClass("is-visible");
+    }
+  });
+</script>
+
+<style>
+  @keyframes float {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+      transform: translate3d(0, 30px, 0);
+    }
+  }
+
+  #astronaut {
+    animation: float linear 2.5s infinite alternate;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #astronaut {
+      @apply animate-none;
+    }
+
+    :global(#starfield) {
+      @apply hidden;
+    }
+
+    #splash-bg-fallback {
+      @apply block;
+    }
+  }
+
+  .text-rotate span {
+    @apply hidden;
+  }
+  .text-rotate span.is-visible {
+    @apply inline-block;
+  }
+  .text-rotate .is-visible {
+    top: 0;
+    opacity: 1;
+    -webkit-animation: slide-in 0.6s;
+    -moz-animation: slide-in 0.6s;
+    animation: slide-in 0.6s;
+  }
+  .text-rotate .is-hidden {
+    -webkit-animation: slide-out 0.6s;
+    -moz-animation: slide-out 0.6s;
+    animation: slide-out 0.6s;
+  }
+
+  @-webkit-keyframes slide-in {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(-100%);
+    }
+    60% {
+      opacity: 1;
+      -webkit-transform: translateY(20%);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+    }
+  }
+  @-moz-keyframes slide-in {
+    0% {
+      opacity: 0;
+      -moz-transform: translateY(-100%);
+    }
+    60% {
+      opacity: 1;
+      -moz-transform: translateY(20%);
+    }
+    100% {
+      opacity: 1;
+      -moz-transform: translateY(0);
+    }
+  }
+  @keyframes slide-in {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(-100%);
+      -moz-transform: translateY(-100%);
+      -ms-transform: translateY(-100%);
+      -o-transform: translateY(-100%);
+      transform: translateY(-100%);
+    }
+    60% {
+      opacity: 1;
+      -webkit-transform: translateY(20%);
+      -moz-transform: translateY(20%);
+      -ms-transform: translateY(20%);
+      -o-transform: translateY(20%);
+      transform: translateY(20%);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+      -moz-transform: translateY(0);
+      -ms-transform: translateY(0);
+      -o-transform: translateY(0);
+      transform: translateY(0);
+    }
+  }
+  @-webkit-keyframes slide-out {
+    0% {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+    }
+    60% {
+      opacity: 0;
+      -webkit-transform: translateY(120%);
+    }
+    100% {
+      opacity: 0;
+      -webkit-transform: translateY(100%);
+    }
+  }
+  @-moz-keyframes slide-out {
+    0% {
+      opacity: 1;
+      -moz-transform: translateY(0);
+    }
+    60% {
+      opacity: 0;
+      -moz-transform: translateY(120%);
+    }
+    100% {
+      opacity: 0;
+      -moz-transform: translateY(100%);
+    }
+  }
+  @keyframes slide-out {
+    0% {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+      -moz-transform: translateY(0);
+      -ms-transform: translateY(0);
+      -o-transform: translateY(0);
+      transform: translateY(0);
+    }
+    60% {
+      opacity: 0;
+      -webkit-transform: translateY(120%);
+      -moz-transform: translateY(120%);
+      -ms-transform: translateY(120%);
+      -o-transform: translateY(120%);
+      transform: translateY(120%);
+    }
+    100% {
+      opacity: 0;
+      -webkit-transform: translateY(100%);
+      -moz-transform: translateY(100%);
+      -ms-transform: translateY(100%);
+      -o-transform: translateY(100%);
+      transform: translateY(100%);
+    }
+  }
+</style>
