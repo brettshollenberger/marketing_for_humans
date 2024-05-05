@@ -1,6 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
 import ContentSection from "~/components/content-section.astro";
+import Underline from "~/components/underline.astro";
 import type { FeatureItem } from "~/types";
 
 const features: Array<FeatureItem> = [
@@ -61,10 +62,9 @@ const features: Array<FeatureItem> = [
           <div class="m-6 rounded-lg">
             <div class="m-3 rounded-lg">
               <div class="p-3 leading-7 text-darkgreen">
-                <span class="text-md font-extrabold text-lg">
-                  Day one, you'll gain access to the members-only site
-                  containing the exact marketing strategies I use to grow my
-                  business, including:
+                <span class="text-md font-extrabold text-xl">
+                  Day one, you'll gain access to the <br />members-only site
+                  containing all the good stuff:
                 </span>
                 <br />
                 <br />
@@ -73,7 +73,7 @@ const features: Array<FeatureItem> = [
                     <span class="font-extrabold"
                       >Hours of step-by-step video training</span
                     > showing you how to create connection, trust, and authority
-                    in your content.
+                    with your ideal customers.
                     <br />
                     <br />
                   </li>
@@ -88,18 +88,19 @@ const features: Array<FeatureItem> = [
                   </li>
                   <li>
                     <span class="font-extrabold">
-                      A branding guide and checklist
+                      A deep dive into branding
                     </span>
-                    to create a consistent and reliable experience across all touchpoints.
+                    that helps you stand out and creates irrationally loyal customers.
                     <br />
                     <br />
                   </li>
                   <li>
                     <span class="font-extrabold">
-                      Step-by-step instructions</span
-                    >
-                    on how to craft relatable, entertaining, and value packed stories
-                    every time.
+                      A master class on storytelling
+
+                    </span>
+                      including step-by-step instructions on how to craft relatable,
+                      entertaining, and value packed stories every time.
                     <br />
                     <br />
                   </li>
@@ -107,21 +108,37 @@ const features: Array<FeatureItem> = [
                     <span class="font-extrabold">
                       A simple comedy writing framework
                     </span>
-                    you can use to punch up any piece of copy.
+                    you can use to build trust, connection, and LOLs.
                     <br />
                     <br />
                   </li>
                   <li>
                     <span class="font-extrabold"
-                      >Worksheets for each module</span
+                      >Worksheets, guides, and checklists for each module</span
                     >
-                    to implement the lessons directly into your business.
+                    to easily apply the lessons directly into your business.
+                    <br />
+                    <br />
+                  </li>
+                  <Underline className="text-xl italic" text="But that's not all!" />
+                  <span class="text-sm text-thin">(Infomercial voice)...</span>
+                  <br />
+                  <br />
+                  <li>
+                    <span class="font-extrabold">Deep dive bonus trainings</span>
+                    on how to tap into the flow state and get the creativity juices flowin'.
                     <br />
                     <br />
                   </li>
                   <li>
-                    <span class="font-extrabold"> 24/7 Lifetime Access</span>
-                    to your course materials.
+                    <span class="font-extrabold">A specific, actionable storytelling framework </span>
+                    for your About Me page, client case studies, and more!
+                    <br />
+                    <br />
+                  </li>
+                  <li>
+                    <span class="font-extrabold"> 24/7 Lifetime (and Afterlife time) Access</span>
+                    to your course materials. They're yours as long as you want 'em (Afterlife internet connection may be spotty).
                   </li>
                 </ul>
               </div>

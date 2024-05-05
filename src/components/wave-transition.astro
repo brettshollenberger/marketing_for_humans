@@ -1,0 +1,36 @@
+---
+// Define the component with props
+const { fromColor = "cream", toColor = "darkgreen" } = Astro.props;
+
+// Color mapping based on Tailwind configuration
+const colorMap = {
+  cream: "#FFFDF1",
+  orange: "#E44B21",
+  steel: "#656A9A",
+  darksteel: "#33001e",
+  oldgold: "#BAB700",
+  champagnepink: "#E3CDBA",
+  yellow: "#f39237",
+  darkgreen: "#042A2B",
+};
+
+// Function to get color hex value
+function getColorHex(colorName) {
+  return colorMap[colorName] || colorMap['cream']; // Default to 'cream' if color name is not found
+}
+
+// Get the hex values from the map
+const fromColorHex = getColorHex(fromColor);
+const toColorHex = getColorHex(toColor);
+---
+
+<div class="h-12 sm:h-32" style={`overflow: hidden; background-color: ${fromColorHex};`}>
+  <svg
+    viewBox="0 0 500 150"
+    preserveAspectRatio="none"
+    style="height: 100%; width: 100%;"
+  >
+    <path
+      d="M0.00,49.99 C150.00,150.00 349.20,-49.99 500.00,49.99 L500.00,150.00 L0.00,150.00 Z"
+      style={`stroke: none; fill: ${toColorHex};`}></path></svg>
+</div>

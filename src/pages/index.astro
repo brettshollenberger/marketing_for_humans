@@ -1,11 +1,12 @@
 ---
 import "@fontsource-variable/inter";
-import Compatibility from "~/components/compatibility.astro";
-import Features from "~/components/features.astro";
 import WhoIsItFor from "~/components/who-is-it-for.astro";
+import WaveTransition from "~/components/wave-transition.astro";
 import Footer from "~/components/footer.astro";
 import Header from "~/components/header.astro";
-import Intro from "~/components/intro.astro";
+import AICallout from "~/components/ai-callout.astro";
+import TheProblem from "~/components/the-problem.astro";
+import WhoYouAre from "~/components/who-you-are.astro";
 import LandingPageSplash from "~/components/landing-page-splash.astro";
 import WhatYouLearn from "~/components/what-you-learn.astro";
 import AtAGlance from "~/components/at-a-glance.astro";
@@ -71,10 +72,13 @@ const description =
   >
     <Header />
     <LandingPageSplash />
-    <Intro />
+    <TheProblem />
+    <WaveTransition toColor="champagnepink" />
+    <WhoYouAre />
+    <BragBox />
+    <AICallout />
     <QuoteBar />
     <WhoIsItFor />
-    <BragBox />
     <AtAGlance />
     <WhatYouLearn />
     <CourseBreakdown />

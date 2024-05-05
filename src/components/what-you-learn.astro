@@ -1,4 +1,5 @@
 ---
+import WaveTransition from "~/components/wave-transition.astro";
 let features = [
   {
     title: "Say goodbye to pushy sales tactics",
@@ -24,7 +25,7 @@ let features = [
   {
     title: "Disarm and charm 'em with humor",
     description:
-      "Humor isn't just about getting laughs. It's a strategic tool that humanizes your brand, gets customers to put their guard down, and helps you stand out and be remembered.",
+      "Humor isn't just about getting laughs. It's a strategic tool that humanizes your brand, gets customers to put their guard down, and helps you stand out and be remembered... you'll also get some laughs!",
     icon: "laugh",
     number: 4,
   },
@@ -38,7 +39,7 @@ let features = [
   {
     title: "Master the art of storytelling",
     description:
-      "Modern marketing is all about connection, and humans build connection by telling stories. Whether it's your website, about page, weekly emails, successful case studies, webinar scripts, or stage time — telling a good story is THE best marketing strategy you can use in 2024.",
+      "Modern marketing is all about connection, and humans build connection by telling stories. Whether it's your website, about page, weekly emails, successful case studies, webinar scripts, or stage time — telling a good story is the best marketing strategy you can use in 2024.",
 
     icon: "trophy",
     number: 6,
@@ -74,14 +75,4 @@ let features = [
     </button>
   </div>
 </section>
-<div class="h-12 sm:h-32" style="overflow: hidden;" class="bg-cream">
-  <svg
-    viewBox="0 0 500 150"
-    preserveAspectRatio="none"
-    style="height: 100%; width: 100%;"
-  >
-    <path
-      d="M0.00,49.99 C150.00,150.00 349.20,-49.99 500.00,49.99 L500.00,150.00 L0.00,150.00 Z"
-      style="stroke: none; fill: #042A2B;"></path></svg
-  >
-</div>
+<WaveTransition />
