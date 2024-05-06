@@ -10,6 +10,11 @@ module.exports = {
     extend: {
       screens: {
         xs: "480px", // Adding an extra small breakpoint
+        // sm: Small - Applies to screens ≥640px.
+        // md: Medium - Applies to screens ≥768px.
+        // lg: Large - Applies to screens ≥1024px.
+        // xl: Extra Large - Applies to screens ≥1280px.
+        // 2xl: 2X Large - Applies to screens ≥1536px.
         "3xl": "1600px", // Adding a larger breakpoint
       },
       fontFamily: {
@@ -108,8 +113,3 @@ module.exports = {
     require("tw-elements/dist/plugin"),
   ],
 };
-
-// darksteel: "#392353",
-// rgb(51, 0, 30)
-
-// cream: #FFFDF1

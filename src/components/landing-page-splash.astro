@@ -1,63 +1,82 @@
 ---
-import { Image } from "astro:assets";
-import { Icon } from "astro-icon/components";
-import astronautImage from "~/assets/astronaut.png";
-import Waitlist from "~/components/waitlist.astro";
+import Section from "~/components/section.astro";
 
 const widths = [450, 800];
 const sizes = "(min-width: 640px) 42vw, 67vw";
 ---
 
 <section
-  class="relative flex flex-col justify-center overflow-hidden bg-black pb-60 text-darksteel sm:pb-20"
+  class="relative flex flex-col justify-center overflow-hidden bg-black md:pb-60 text-darksteel lg:pb-10 sm:pb-20 xs:pb-20"
 >
   <div class="overflow-hidden">
+    <!-- Large+ view -->
     <div
       id="splash-bg-fallback"
-      class="bg-hero-repeat invisible absolute inset-0 bg-hero-pattern bg-hero-size md:visible"
-      style="background-repeat: no-repeat,repeat; background-position: 65%;"
+      class="bg-hero-repeat invisible absolute inset-0 bg-hero-pattern bg-hero-size lg:visible"
+      style="background-repeat: no-repeat,repeat; background-position: 60% 80%;"
     >
     </div>
-    <div class="bg-hero visible absolute inset-0 md:invisible"></div>
+    <!-- Medium view -->
     <div
       id="splash-bg-mobile"
-      class="bg-hero bg-hero-pattern-mobile visible absolute inset-0 bg-hero-size md:invisible"
-      style="background-repeat: no-repeat,repeat; background-position: center 70%; height: 150%;"
+      class="sm:invisible md:visible absolute inset-0 bg-hero bg-hero-pattern-mobile bg-hero-size lg:invisible invisible"
+      style="background-repeat: no-repeat,repeat; background-position: 170% 20%; height: 100%;"
     >
     </div>
-  </div>
-  <div class="relative grid place-items-center pt-0 sm:grid-cols-2 sm:py-20">
-    <h2
-      class="mt-24 flex flex-col items-center gap-2 sm:mb-0 sm:mt-40 sm:gap-4 sm:self-auto sm:justify-self-end"
+    <!-- Small view -->
+    <div
+      id="splash-bg-mobile"
+      class="sm:visible absolute inset-0 bg-hero bg-hero-pattern-mobile bg-hero-size md:invisible mt-10 invisible"
+      style="background-repeat: no-repeat,repeat; background-position: 175% 50%; height: 100%;"
     >
-      <div>
-        <span
-          class="text-left font-extrabold tracking-tighter text-cream text-8xl"
-        >
-          Marketing
-          <br /> For Humans
-        </span>
-        <br />
-        <p class="mb-8 text-left text-cream text-lg">
-          Learn the <span class="text-rotate font-bold text-darksteel">
-            <span class="is-visible">enjoyably</span>
-            <span>hilariously</span>
-            <span>relatably</span>
-            <span>charmingly</span>
-          </span>
-          <span class="font-bold"> human</span> approach to<br />
-          marketing that makes you money.
-        </p>
-        <a
-          id="waitlist-button"
-          class="my-2 rounded-full bg-darksteel px-5 py-5 text-cream text-sm hover:bg-cream hover:text-darksteel"
-          data-formkit-toggle="b8aa984805"
-          href="https://the-copy-whisperer.ck.page/b8aa984805"
-          >Join the waitlist!</a
-        >
-      </div>
-    </h2>
+    </div>
+    <!-- Gradient fade out for medium sized view      -->
+    <div class="invisible absolute inset-0 lg:invisible md:visible sm:invisible"
+      style="background: linear-gradient(to right, #E0453B 30%, transparent 50%"> 
+    </div>
+    <!-- Gradient fade out for small sized view      -->
+    <div class="invisible absolute inset-0 md:invisible sm:visible"
+      style="background: linear-gradient(to right, #E0453B 40%, transparent 50%"> 
+    </div>
+    <!-- Gradient fade out for xs (mobile) sized view      -->
+    <div class="visible absolute inset-0 sm:invisible"
+      style="background-color: #E0453B"> 
+    </div>
   </div>
+  <Section>
+    <div class="relative grid place-items-center pt-0 sm:grid-cols-2 lg:py-20">
+      <h2
+        class="mt-24 flex flex-col items-center gap-2 sm:mb-0 sm:mt-40 sm:gap-4 sm:self-auto sm:justify-self-end"
+      >
+        <div>
+          <span
+            class="stroke-black text-left font-extrabold tracking-tighter text-cream text-8xl"
+          >
+            Marketing
+            <br /> For Humans
+          </span>
+          <br />
+          <p class="mb-8 text-left text-cream text-lg">
+            Learn the <span class="text-rotate font-bold text-darksteel">
+              <span class="is-visible">enjoyably</span>
+              <span>hilariously</span>
+              <span>relatably</span>
+              <span>charmingly</span>
+            </span>
+            <span class="font-bold"> human</span> approach to<br />
+            marketing that makes you money.
+          </p>
+          <a
+            id="waitlist-button"
+            class="my-2 rounded-full bg-darksteel px-5 py-5 text-cream text-sm hover:bg-cream hover:text-darksteel"
+            data-formkit-toggle="b8aa984805"
+            href="https://the-copy-whisperer.ck.page/b8aa984805"
+            >Join the waitlist!</a
+          >
+        </div>
+      </h2>
+    </div>
+  </Section>
   <div
     class="bg-size-100 absolute bottom-0 h-[100px] w-full bg-triangle bg-bottom bg-repeat-x"
     style="background-size:45px;"
