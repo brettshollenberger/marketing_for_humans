@@ -1,9 +1,9 @@
 ---
 import { Icon } from "astro-icon/components";
-import ContentSection from "~/components/content-section.astro";
-import type { FeatureItem } from "~/types";
+import Section from "~/components/section.astro";
 ---
 
+<Section className="bg-darkgreen">
 <section class="bg-darkgreen p-10" id="course-breakdown">
   <div class="flex flex-col items-center">
     <h2
@@ -233,3 +233,5 @@ import type { FeatureItem } from "~/types";
     rotateButton3.addEventListener("click", rotateButton);
   });
 </script>
+
+</Section>

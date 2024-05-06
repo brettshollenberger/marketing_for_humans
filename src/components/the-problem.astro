@@ -1,12 +1,9 @@
 ---
-import { Icon } from "astro-icon/components";
-import { Code } from "astro:components";
-import ContentSection from "~/components/content-section.astro";
 import Underline from "~/components/underline.astro";
+import Section from "~/components/section.astro"
 ---
 
-<div class="my-0 bg-cream px-0 py-8 sm:space-y-24 lg:px-8 lg:pt-24 sm:px-2">
-  <div class="mx-8 lg:mx-32">
+<Section className="bg-cream pt-24">
     <section
     class="flex scroll-mt-24 flex-col items-center gap-0 space-y-1 sm:gap-4"
     >
@@ -24,7 +21,7 @@ import Underline from "~/components/underline.astro";
                 <span class="font-bold">
                     Nobody wants to feel sold to.
                 </span>
-                Nobody wants to attend some lame webinar. Nobody wants their email held hostage for a freebie that frankly isn’t worth the inbox spam.
+                Nobody wants to attend a lame webinar or have their email held hostage for a freebie that frankly isn’t worth the inbox spam.
                 </p>
                 <p class="mb-4">
                   Consumers today are smarter than ever and 
@@ -50,20 +47,14 @@ import Underline from "~/components/underline.astro";
                 </p>
                 <p class="mb-4">
                     When so many businesses are selling the same thing, with the same features, and same benefits…
-                    <Underline className="text-orange" text="how are you supposed to stand out?" />
-                </p>
-                <p class="mb-4">
-                    What would make someone want to buy from YOU?
+                    <Underline className="text-orange" text="How are you supposed to stand out?" />
                 </p>
                 <p class="mb-4 text-xl">
-                    <span class="bg-highlight-orange text-cream py-1 px-5">
                     That's where
                         <span class="font-bold">
                         Marketing for Humans
                         </span>
                         comes in!
-                        </span>
-
                 </p>
             </div>
             <div
@@ -76,5 +67,4 @@ import Underline from "~/components/underline.astro";
             </div>
         </div>
     </section>
-  </div>
-</div>
+</Section>

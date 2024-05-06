@@ -1,54 +1,60 @@
-<section class="px-8 py-0" id="instructor">
-  <div class="flex flex-col items-center">
-    <div
-      class="mt-12 grid max-w-5xl grid-cols-1 items-end gap-4 sm:gap-48 md:grid-cols-3"
-    >
-      <div class="col-span-2">
-        <div class="py-8">
-          <h2 class="font-larken font-extrabold text-darksteel text-4xl">
-            Who Teaches Marketing For Humans?
-          </h2>
-          <p class="text-lg leading-none font-normal pb-4">
-            Let me introduce you to the one and only <span class="text-orange">Nadia Casey!</span>
-          </p>
-          <p>
-            A former <span class="font-bold">White House</span> intern, 
-            who then navigated her way to <span class="font-bold">Google</span>,
-            started writing for <span class="font-bold">The Onion</span>,
-            and then gracefully transitioned into the world of copywriting and marketing strategy!
-          </p>
-          <br />
-          <p>
-            Known to many
-            <span class="italic"> (but acknowledged by none)</span>
-            as a cool, hip, and overall stylish lady — Nadia’s mission in life is to bring authenticity
-            and fun into the work we find ourselves pursuing while hurling around the sun on this rock we call home.
-          </p>
-          <br />
-          <p>
-            Her unconventional (but story worthy) career path has led to her an
-            authentic, feel-good approach to marketing, sales, and life — an
-            approach that feels enjoyably, hilariously, and relatably human.
-          </p>
-          <div class="flex grid grid-cols-1 flex-col sm:grid-cols-3">
-            <button
-              class="mt-8 items-center rounded-lg bg-orange px-6 py-3 text-center font-bold text-white hover:bg-champagnepink"
-              style="box-shadow: 2px 2px 0 1px black;"
-              data-formkit-toggle="b8aa984805"
-              href="https://the-copy-whisperer.ck.page/b8aa984805"
-            >
-              Sign Me Up!
-            </button>
+---
+import Section from "~/components/section.astro";
+---
+
+<Section>
+  <section class="pt-8 pb-0" id="instructor">
+    <div class="flex flex-col items-center">
+      <div
+        class="grid max-w-5xl grid-cols-1 items-end gap-4 sm:gap-48 md:grid-cols-3"
+      >
+        <div class="col-span-2">
+          <div class="py-8">
+            <h2 class="font-larken font-extrabold text-darksteel text-4xl">
+              Who Teaches Marketing For Humans?
+            </h2>
+            <p class="text-lg leading-none font-normal pb-4">
+              Let me introduce you to the one and only <span class="text-orange">Nadia Casey!</span>
+            </p>
+            <p>
+              A former <span class="font-bold">White House</span> intern, 
+              who then navigated her way to <span class="font-bold">Google</span>,
+              started writing for <span class="font-bold">The Onion</span>,
+              and then gracefully transitioned into the world of copywriting and marketing strategy!
+            </p>
+            <br />
+            <p>
+              Known to many
+              <span class="italic"> (but acknowledged by none)</span>
+              as a cool, hip, and overall stylish lady — Nadia’s mission in life is to bring authenticity
+              and fun into the work we find ourselves pursuing while hurling around the sun on this rock we call home.
+            </p>
+            <br />
+            <p>
+              Her unconventional (but story worthy) career path has led to her an
+              authentic, feel-good approach to marketing, sales, and life — an
+              approach that feels enjoyably, hilariously, and relatably human.
+            </p>
+            <div class="flex grid grid-cols-1 flex-col sm:grid-cols-3">
+              <button
+                class="mt-8 items-center rounded-lg bg-orange px-6 py-3 text-center font-bold text-white hover:bg-champagnepink"
+                style="box-shadow: 2px 2px 0 1px black;"
+                data-formkit-toggle="b8aa984805"
+                href="https://the-copy-whisperer.ck.page/b8aa984805"
+              >
+                Sign Me Up!
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="m-auto w-[150px] items-center sm:m-0 sm:w-[300px]">
-        <img
-          src="https://assets-global.website-files.com/5f2ae813361eff3ad9282b29/6441a1e6ac48d699fabac167_MarieForleo_WhoTeachesBSchool.png"
-          alt="Instructor Image"
-          class="object-bottom"
-        />
+        <div class="m-auto w-[150px] items-center sm:m-0 sm:w-[300px] md:block hidden">
+          <img
+            src="https://assets-global.website-files.com/5f2ae813361eff3ad9282b29/6441a1e6ac48d699fabac167_MarieForleo_WhoTeachesBSchool.png"
+            alt="Instructor Image"
+            class="object-bottom"
+          />
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+</Section>

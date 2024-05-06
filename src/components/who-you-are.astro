@@ -3,10 +3,10 @@ import { Icon } from "astro-icon/components";
 import { Code } from "astro:components";
 import ContentSection from "~/components/content-section.astro";
 import Underline from "~/components/underline.astro";
+import Section from "~/components/section.astro"
 ---
 
-<div class="my-0 bg-champagnepink px-0 py-8 sm:space-y-24 sm:px-8">
-  <div class="mx-8 sm:mx-32">
+<Section className="bg-champagnepink pb-12">
     <section
     class="flex scroll-mt-24 flex-col gap-0 space-y-1 sm:gap-4"
     >
@@ -19,7 +19,7 @@ import Underline from "~/components/underline.astro";
             </h2>
         </div>
         <div class="m-auto text-darksteel">
-            <div class="w-2/3">
+            <div class="w-full lg:w-2/3">
                 <h2 
                 class="text-left tracking-tighter text-xl pb-4">
                 <span class="font-bold">
@@ -70,5 +70,4 @@ import Underline from "~/components/underline.astro";
             </div>
         </div>
     </section>
-  </div>
-</div>
+</Section>
