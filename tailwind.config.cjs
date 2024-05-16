@@ -57,6 +57,8 @@ module.exports = {
       },
       backgroundImage: {
         "hero-pattern": 'url("/hero.png"),linear-gradient(#DB3132,#DB3132)', // E25D10
+        "nadia-pattern":
+          'url("/headshots/homepage.png"),linear-gradient(#DB3132,#DB3132)', // E25D10
         "hero-pattern-mobile":
           'url("/hero_mobile.png"),linear-gradient(#DB3132,#DB3132)', // E25D10
         triangle:
@@ -80,6 +82,7 @@ module.exports = {
         60: "60% auto",
         50: "50% auto",
         40: "40% auto",
+        35: "35% auto",
         30: "30% auto",
         20: "20% auto",
         10: "10% auto",
