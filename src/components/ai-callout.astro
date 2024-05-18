@@ -16,7 +16,16 @@ import Section from "~/components/section.astro"
           </h2>
         </div>
         <div class="m-auto text-darksteel">
-            <div class="flex flex-row text-left gap-4">
+            <div class="flex lg:flex-row flex-col flex-col text-left gap-4">
+            <!-- Photo small/mobile -->
+            <div
+                class="flex lg:hidden flex-col items-center justify-center md:visible"
+            >
+                <img
+                class="w-3/5 m-auto rotate-3"
+                src="/dumb_ai.png"
+                />
+            </div>
             <div class="w-full flex-1 lg:w-3/4 sm:w-full">
                 <p class="mb-4">
                 <span class="font-bold">
@@ -43,11 +52,12 @@ import Section from "~/components/section.astro"
                   To be human. 
                 </p>
             </div>
+            <!-- Photo large -->
             <div
-                class="flex lg:block flex-col items-center justify-center lg:w-1/4 md:block sm:hidden xs:hidden hidden"
+                class="flex lg:block flex-col items-center justify-center lg:w-1/4 md:hidden sm:hidden xs:hidden hidden"
             >
                 <img
-                class="w-full max-w-72 rotate-3"
+                class="w-full m-auto max-w-72 rotate-3"
                 src="/dumb_ai.png"
                 />
             </div>

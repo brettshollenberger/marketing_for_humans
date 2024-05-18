@@ -15,56 +15,52 @@ import Section from "~/components/section.astro"
             </h2>
         </div>
         <div class="m-auto text-darksteel">
-            <div class="flex flex-row gap-0 text-left sm:gap-20">
-            <div class="w-full flex-1 lg:w-2/3 sm:w-full">
-                <p class="mb-4">
-                <span class="font-bold">
-                    Nobody wants to feel sold to.
-                </span>
-                Nobody wants to attend a lame webinar or have their email held hostage for a freebie that frankly isn’t worth the inbox spam.
-                </p>
-                <p class="mb-4">
-                  Consumers today are smarter than ever and 
-                    when we get overly focused on making the sale — 
-                    we forget what makes people actually want to buy in the first place.
-                    So the question we must ask ourselves is...
-                    <span class="font-bold">
-                        What makes people actually want to buy?
-                    </span>
-                </p>
-                <p class="mb-4">
-                </p>
-                <p class="mb-4">
-                    People buy when they have a problem they think you can solve... but!
-                </p>
-                <p class="mb-4">
-                    In this overcrowded market — <span class="font-bold">
-                            you're not the only person who can solve their problem.
-                    </span>
-                    You're not the only trainer at the gym,
-                    not the only business coach online,
-                    and you’re definitely not the only Etsy shop selling tiny hats for dogs.
-                </p>
-                <p class="mb-4">
-                    When so many businesses are selling the same thing, with the same features, and same benefits…
-                    <Underline className="text-orange" text="How are you supposed to stand out?" />
-                </p>
-                <p class="mb-4 text-xl">
-                    That's where
-                        <span class="font-bold">
-                        Marketing for Humans
-                        </span>
+            <div class="flex flex-col md:flex-col lg:flex-row gap-0 text-left">
+                <!-- Photo Mobile -->
+                <div class="xs:w-full flex-1 flex flex-col items-center justify-center xs:block sm:hidden md:hidden">
+                    <img class="w-4/5 m-auto rotate-5" src="/computer.png" />
+                </div>
+                <div class="w-full flex-1 lg:w-2/3 sm:w-full">
+                    <p class="mb-4">
+                        <span class="font-bold">Nobody wants to feel sold to.</span>
+                        Nobody wants to attend a lame webinar or have their email held hostage for a freebie that frankly isn’t worth the inbox spam.
+                    </p>
+                    <p class="mb-4">
+                        Consumers today are smarter than ever and when we get overly focused on making the sale —
+                        we forget what makes people actually want to buy in the first place.
+                        So the question we must ask ourselves is...
+                        <span class="font-bold">What makes people actually want to buy?</span>
+                    </p>
+                    <p class="mb-4"></p>
+                    <p class="mb-4">
+                        People buy when they have a problem they think you can solve... but!
+                    </p>
+                    <p class="mb-4">
+                        In this overcrowded market — <span class="font-bold">you're not the only person who can solve their problem.</span>
+                        You're not the only trainer at the gym,
+                        not the only business coach online,
+                        and you’re definitely not the only Etsy shop selling tiny hats for dogs.
+                    </p>
+                    <p class="mb-4">
+                        When so many businesses are selling the same thing, with the same features, and same benefits…
+                        <Underline className="text-orange" text="How are you supposed to stand out?" />
+                    </p>
+                    <p class="mb-4 text-xl">
+                        That's where
+                        <span class="font-bold">Marketing for Humans</span>
                         comes in!
-                </p>
-            </div>
-            <div
-                class="flex lg:block flex-col items-center justify-center lg:w-2/5 hidden sm:hidden xs:hidden"
-            >
-                <img
-                class="w-full rotate-5"
-                src="/computer.png"
-                />
+                    </p>
+                </div>
+                <!-- Photo Desktop -->
+                <div class="hidden lg:block lg:w-2/5 sm:hidden xs:hidden flex-col items-center justify-center">
+                    <img class="w-full rotate-5" src="/computer.png" />
+                </div>
+                <!-- Photo Small -->
+                <div class="hidden sm:flex md:flex lg:hidden flex-1 flex-col items-center justify-center">
+                    <img class="w-4/5 m-auto rotate-5" src="/computer.png" />
+                </div>
             </div>
         </div>
+
     </section>
 </Section>
