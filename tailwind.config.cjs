@@ -58,7 +58,7 @@ module.exports = {
       backgroundImage: {
         "hero-pattern": 'url("/hero.png"),linear-gradient(#DB3132,#DB3132)', // E25D10
         "nadia-pattern":
-          'url("/headshots/homepage.png"),linear-gradient(#DB3132,#DB3132)', // E25D10
+          'url("/headshots/homepage.png"),linear-gradient(#E0593F,#E0593F)', // E25D10
         "hero-pattern-mobile":
           'url("/hero_mobile.png"),linear-gradient(#DB3132,#DB3132)', // E25D10
         triangle:
@@ -107,7 +107,8 @@ module.exports = {
         champagnepink: "#E3CDBA",
         yellow: "#f39237",
         darkgreen: "#042A2B",
-        hero: "#DB3132",
+        // hero: "#DB3132",
+        hero: "#E44B21",
       },
       borderColor: {
         default: "var(--color-border)",
