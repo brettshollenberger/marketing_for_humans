@@ -17,9 +17,9 @@ import Biography from "~/components/biography.astro";
 import "~/styles/index.css";
 
 const { generator, site } = Astro;
-const image = new URL("social.jpg", site);
+const image = new URL("jpg", site);
 const description =
-  "Build fast websites, faster. Astro is a new kind of site builder for the modern web. Lightning-fast performance meets powerful developer experience.";
+  "Learn the enjoyably human approach to marketing that makes you money.";
 ---
 
 <html lang="en" class="h-full motion-safe:scroll-smooth" data-theme="dark">
@@ -33,7 +33,7 @@ const description =
     <meta name="description" content={description} />
 
     <!-- social media -->
-    <meta property="og:title" content="Astro" />
+    <meta property="og:title" content="Marketing For Humans" />
     <meta property="og:type" content="website" />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={image} />
