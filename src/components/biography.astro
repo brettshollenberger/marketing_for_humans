@@ -6,10 +6,26 @@ import Section from "~/components/section.astro";
   <section class="pt-4 pb-0" id="instructor">
     <div class="flex flex-col items-center">
       <div class="flex flex-col lg:flex-row text-darksteel">
+        <!-- Medium img as new row -->
+        <div class="m-auto items-center lg:hidden md:block hidden mb-8 lg:hidden block mt-0 w-3/5">
+          <img
+            src="/youtube_headshot.png"
+            alt="Instructor Image"
+            class="object-bottom relative bottom-[-35px] z-[-1]"
+          />
+        </div>
+        <!-- Mobile img as new row -->
+        <div class="m-auto items-center block xs:block sm:block md:hidden mb-8 lg:hidden block mt-0 w-4/5">
+          <img
+            src="/youtube_headshot.png"
+            alt="Instructor Image"
+            class="object-bottom relative bottom-[-35px] z-[-1]"
+          />
+        </div>
         <div class="relative grid items-end gap-4 lg:grid-cols-3 text-darksteel">
           <div class="col-span-2">
             <div class="py-8">
-              <h2 class="font-larken font-extrabold text-darksteel text-4xl">
+              <h2 class="font-larken font-extrabold text-darksteel sm:text-4xl text-3xl">
                 Who Teaches Marketing For Humans?
               </h2>
               <p class="text-lg leading-none font-normal pb-4">
@@ -51,17 +67,9 @@ import Section from "~/components/section.astro";
             <img
               src="/bio.png"
               alt="Instructor Image"
-              class="object-bottom absolute right-[200px] bottom-[-45px] z-[-1]"
+              class="object-bottom absolute right-[100px] bottom-[-55px] z-[-1]"
             />
           </div>
-        </div>
-        <!-- Medium/smaller img as new row -->
-        <div class="m-auto items-center sm:my-0 lg:hidden block mt-4">
-          <img
-            src="/bio.png"
-            alt="Instructor Image"
-            class="object-bottom relative bottom-[-35px] z-[-1]"
-          />
         </div>
       </div>
     </div>
