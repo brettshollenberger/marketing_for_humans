@@ -16,6 +16,20 @@ module.exports = {
         // xl: Extra Large - Applies to screens ≥1280px.
         // 2xl: 2X Large - Applies to screens ≥1536px.
         "3xl": "1600px", // Adding a larger breakpoint
+        "4xl": "1720px", // 4X large screens
+        "5xl": "1920px", // 4X large screens
+        "6xl": "2240px", // 5X large screens
+        "7xl": "2400px", // 5X large screens
+        "8xl": "2560px", // 6X large screens
+        "9xl": "2880px", // 7X large screens
+        "10xl": "3200px", // 8X large screens
+        "10xl": "3520px", // 9X large screens
+        "10xl": "3840px", // 10X large screens
+        "11xl": "4160px", // 11X large screens
+        "12xl": "4480px", // 12X large screens
+        "13xl": "4800px", // 13X large screens
+        "14xl": "5120px", // 14X large screens
+        "15xl": "5440px", // 15X large screens
       },
       fontFamily: {
         sans: ["Inter Variable", ...defaultTheme.fontFamily.sans],
@@ -91,6 +105,7 @@ module.exports = {
         35: "35% auto",
         30: "30% auto",
         25: "25% auto",
+        22: "22% auto",
         20: "20% auto",
         15: "15% auto",
         10: "10% auto",
